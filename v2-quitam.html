@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>QuiTam Copilot — Debmalya Sarkar</title>
+<meta name="description" content="A multi-agent AI tool that turns whistleblower evidence into a court-ready False Claims Act case." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="v2-style.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html">home</a>
+    <a href="v2-experience.html">experience</a>
+    <a href="v2-projects.html">projects</a>
+    <a href="v2-life.html">life</a>
+    <a href="v2-about.html">about</a>
+  </div>
+</header>
+
+<main>
+  <div class="cs-hero-media">
+    <svg viewBox="0 0 2000 720" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="2000" height="720" fill="#2A211B"/>
+      <g stroke="#C2C9A1" stroke-width="3" opacity="0.55">
+        <line x1="1000" y1="360" x2="700" y2="180"/><line x1="1000" y1="360" x2="740" y2="560"/>
+        <line x1="1000" y1="360" x2="1300" y2="180"/><line x1="1000" y1="360" x2="1260" y2="560"/>
+        <line x1="700" y1="180" x2="400" y2="120"/><line x1="1300" y1="180" x2="1600" y2="120"/>
+        <line x1="740" y1="560" x2="420" y2="620"/><line x1="1260" y1="560" x2="1580" y2="620"/>
+      </g>
+      <circle cx="1000" cy="360" r="48" fill="#6B6F3A" stroke="#C2C9A1" stroke-width="4"/>
+      <circle cx="700" cy="180" r="22" fill="#C9A96E"/><circle cx="740" cy="560" r="22" fill="#C2C9A1"/>
+      <circle cx="1300" cy="180" r="22" fill="#C2C9A1"/><circle cx="1260" cy="560" r="22" fill="#C9A96E"/>
+      <circle cx="400" cy="120" r="12" fill="#8C5E48"/><circle cx="1600" cy="120" r="12" fill="#8C5E48"/>
+      <circle cx="420" cy="620" r="12" fill="#8C5E48"/><circle cx="1580" cy="620" r="12" fill="#8C5E48"/>
+    </svg>
+  </div>
+
+  <div class="wrap cs-head">
+    <p class="cat reveal">Case study · LegalTech · 0→1</p>
+    <h1 class="reveal">QuiTam Copilot</h1>
+    <p class="sub reveal">From a pile of evidence to a court-ready case</p>
+  </div>
+
+  <div class="wrap cs-layout">
+    <aside class="cs-sidebar">
+      <div class="cs-sidebar-inner">
+        <a class="cs-back" href="v2-projects.html">← all work</a>
+        <h2 class="cs-side-title">QuiTam Copilot</h2>
+        <nav class="cs-spy">
+          <a href="#tldr" class="active">TL;DR</a>
+          <a href="#problem">Problem</a>
+          <a href="#hypotheses">Hypotheses</a>
+          <a href="#solution">Solution</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#impact">Impact</a>
+        </nav>
+      </div>
+    </aside>
+
+    <div class="cs-content">
+
+      <section id="tldr" class="cs-section reveal">
+        <h2 class="eyebrow">TL;DR</h2>
+        <p class="cs-lede">An AI tool that helps whistleblower attorneys prepare qui tam lawsuits under the federal False Claims Act — mapping raw, messy evidence onto the legal elements a case actually needs.</p>
+        <dl class="cs-meta">
+          <div><dt>Role</dt><dd>Product &amp; Strategy</dd></div>
+          <div><dt>Timeline</dt><dd>2025 · 24-hr build, ongoing</dd></div>
+          <div><dt>Domain</dt><dd>Legal · False Claims Act</dd></div>
+          <div><dt>Stack</dt><dd>Claude API · multi-agent graph</dd></div>
+          <div><dt>Type</dt><dd>Independent project (not employer work)</dd></div>
+        </dl>
+        <div class="cs-prose">
+          <p>The False Claims Act lets a private citizen — a "relator" — sue on behalf of the government when they uncover fraud against a federal program. The attorneys who take these cases have to turn raw evidence (billing records, internal emails, invoices) into a structured argument that ties each fact to the legal elements a court needs to see.</p>
+          <p><strong>QuiTam Copilot</strong> does the first pass of that work. You hand it a bundle of documents; it hands back a structured case memo — the entities and dollar amounts, a fraud timeline, an evidence-to-law map, and an estimated damages figure — for an attorney to review and refine.</p>
+          <h3>Who it's for</h3>
+          <ul>
+            <li><strong>Whistleblower / qui tam attorneys</strong> — the primary user, building and filing the case.</li>
+            <li><strong>The relator</strong> — the whistleblower who supplies the raw evidence.</li>
+          </ul>
+          <h3>The landscape</h3>
+          <p>Adjacent tools exist — Darrow AI focuses on <em>finding</em> new cases, Harvey AI on general legal drafting — but none go deep on FCA complaint preparation specifically, which is exactly the gap this targets.</p>
+        </div>
+      </section>
+
+      <section id="problem" class="cs-section reveal">
+        <h2 class="eyebrow">The Problem</h2>
+        <div class="cs-prose">
+          <p>Preparing an FCA case means manually combing through thousands — sometimes millions — of pages to assemble a timeline and connect each piece of evidence to the law. It can take weeks per case, and that prep work is the bottleneck on how many cases a firm can take on. Meanwhile, the market this serves is enormous and growing.</p>
+        </div>
+        <div class="cs-stats">
+          <div class="cs-stat"><div class="num"><span class="unit">$</span>6.8B</div><div class="lbl">recovered in FCA settlements in FY2025 — an all-time record</div></div>
+          <div class="cs-stat"><div class="num">1,297</div><div class="lbl">new qui tam filings in a single year (+32% YoY)</div></div>
+          <div class="cs-stat"><div class="num"><span class="unit">~$</span>100B</div><div class="lbl">estimated lost to fraud against federal programs annually</div></div>
+        </div>
+        <div class="cs-prose" style="margin-top:20px;">
+          <h3>The opportunity</h3>
+          <p>No tool takes raw whistleblower evidence and maps it to the legal elements required to file. The opening: compress weeks of manual case preparation into a structured first draft — and let attorneys spend their time on judgment, not assembly.</p>
+        </div>
+      </section>
+
+      <section id="hypotheses" class="cs-section reveal">
+        <h2 class="eyebrow">Hypotheses</h2>
+        <div class="cs-prose">
+          <ul>
+            <li>If evidence is mapped automatically to the four FCA elements — <strong>Falsity, Scienter, Materiality, Causation</strong> — an attorney can judge case strength in minutes instead of weeks.</li>
+            <li>A <strong>multi-agent architecture</strong> will beat a single monolithic prompt, because extraction, timeline-building, legal mapping, and damages each call for different reasoning.</li>
+            <li>The artifact that matters is a <strong>structured case memo</strong> with citations and a gap analysis — not a chatbot.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="solution" class="cs-section reveal">
+        <h2 class="eyebrow">Solution — Job Stories</h2>
+        <p class="cs-lede" style="font-size:16px;margin-bottom:14px;">The use cases that defined what the first version had to do:</p>
+        <div class="cs-quote">"Upload a bundle of raw documents and get the key entities and dollar amounts pulled out — so I can stop manually combing billing records for the fraud signal." <br><span style="opacity:.7;font-size:14px;">Example: flag a clinic that billed the highest-complexity code 92% of the time against a ~40% national average.</span></div>
+        <div class="cs-quote">"See the fraud laid out as a timeline — so I can show the conduct was sustained and deliberate, not accidental." <br><span style="opacity:.7;font-size:14px;">Example: "pattern began Jan 2022, was systemic by March, ran through Dec 2023."</span></div>
+        <div class="cs-quote">"See each piece of evidence mapped to the legal element it supports — so I can judge whether the case actually clears the bar to file." <br><span style="opacity:.7;font-size:14px;">Example: a strength score for Falsity, Scienter, Materiality, and Causation.</span></div>
+        <div class="cs-quote">"Get an estimated damages figure — so I can understand the case's scale before investing more time." <br><span style="opacity:.7;font-size:14px;">Example: a treble-damages estimate against the CMS fee schedule, plus per-claim penalties.</span></div>
+      </section>
+
+      <section id="architecture" class="cs-section reveal">
+        <h2 class="eyebrow">Architecture</h2>
+        <div class="cs-prose">
+          <p>A master agent coordinates four specialized agents, each leaving its work on a shared document graph the next can read. The output is a single structured memo — not a conversation.</p>
+        </div>
+        <div class="cs-cards">
+          <div class="cs-card"><span class="step">Agent 01</span><h4>Entity extractor</h4><p>Pulls people, billing codes, counts, and dollar amounts from the documents and benchmarks them against national averages to flag anomalies.</p></div>
+          <div class="cs-card"><span class="step">Agent 02</span><h4>Timeline builder</h4><p>Orders the facts into a chronological story that shows whether the conduct was sustained and deliberate.</p></div>
+          <div class="cs-card"><span class="step">Agent 03</span><h4>FCA mapper</h4><p>Scores the evidence against Falsity, Scienter, Materiality, and Causation — and checks exclusion lists.</p></div>
+          <div class="cs-card"><span class="step">Agent 04</span><h4>Damage calculator</h4><p>Estimates treble damages against the fee schedule and adds per-claim civil penalties.</p></div>
+        </div>
+      </section>
+
+      <section id="impact" class="cs-section reveal">
+        <h2 class="eyebrow">Outcome</h2>
+        <div class="cs-prose">
+          <p>The first version was built in a 24-hour hackathon on the Claude API and a multi-agent graph, then validated in conversations with practicing qui tam attorneys. The pitch line that stuck: <em>TurboTax for whistleblower lawsuits</em> — turning a pile of evidence into a court-ready draft in minutes instead of weeks.</p>
+        </div>
+        <div class="cs-stats">
+          <div class="cs-stat"><div class="num">24<span class="unit">hr</span></div><div class="lbl">to a working MVP from scratch</div></div>
+          <div class="cs-stat"><div class="num">4</div><div class="lbl">specialized agents over one shared graph</div></div>
+          <div class="cs-stat"><div class="num">weeks<span class="unit">→</span>hrs</div><div class="lbl">target reduction in case-prep time</div></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="wrap cs-next">
+    <a href="v2-jobago.html">
+      <span class="lbl">Next case study →</span>
+      <span class="ttl">Jobago.ai</span>
+    </a>
+  </div>
+</main>
+
+<footer class="site" id="contact">
+  <div class="wrap">
+    <p class="tagline">Turning complex data into things people can actually use.</p>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <p class="label">Navigation</p>
+        <a href="index.html">Home</a>
+        <a href="v2-experience.html">Experience</a>
+        <a href="v2-projects.html">Projects</a>
+        <a href="v2-life.html">Life</a>
+        <a href="v2-about.html">About</a>
+        <a href="Debmalya-Sarkar-Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+      <div class="footer-col">
+        <p class="label">Let's Talk</p>
+        <a href="https://www.linkedin.com/in/debmalya-sarkar/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/debssM" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=kAcK5e4AAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+        <button type="button" id="copyEmail">Email</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="v2-common.js"></script>
+</body>
+</html>

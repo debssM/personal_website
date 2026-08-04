@@ -169,6 +169,31 @@ section{padding:56px 0;scroll-margin-top:84px;}
 }
 .resume-btn:hover{background:var(--accent);}
 
+/* ---------- live demo cta ---------- */
+.demo-cta{
+  display:inline-flex;align-items:center;gap:10px;margin-top:20px;
+  font-family:"Hanken Grotesk",sans-serif;font-weight:700;font-size:16.5px;
+  color:var(--paper);background:var(--accent);text-decoration:none;
+  padding:16px 30px;border-radius:999px;
+  box-shadow:0 10px 26px color-mix(in srgb,var(--accent) 38%,transparent);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.demo-cta:hover{transform:translateY(-2px);box-shadow:0 14px 34px color-mix(in srgb,var(--accent) 48%,transparent);}
+.demo-cta .live-dot{width:9px;height:9px;border-radius:50%;background:#7CFC9A;flex:none;animation:demoPulse 1.8s infinite;}
+@keyframes demoPulse{
+  0%{box-shadow:0 0 0 0 rgba(124,252,154,.65);}
+  70%{box-shadow:0 0 0 9px rgba(124,252,154,0);}
+  100%{box-shadow:0 0 0 0 rgba(124,252,154,0);}
+}
+
+.proj-links a.demo-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  color:var(--paper);background:var(--accent);
+  padding:6px 16px;border-radius:999px;font-weight:700;
+}
+.proj-links a.demo-badge:hover{background:var(--ink);color:var(--paper);text-decoration:none;}
+.proj-links a.demo-badge .live-dot{width:7px;height:7px;border-radius:50%;background:#7CFC9A;flex:none;animation:demoPulse 1.8s infinite;}
+
 /* ---------- research ---------- */
 .pubs{display:flex;flex-direction:column;}
 .pub{display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--hairline);}

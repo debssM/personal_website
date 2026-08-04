@@ -13,9 +13,8 @@
     }
   });
 
-  // copy email button
-  var copyBtn = document.getElementById('copyEmail');
-  if(copyBtn){
+  // copy email buttons (footer + hero, any element with this class)
+  document.querySelectorAll('.copy-email-btn').forEach(function(copyBtn){
     copyBtn.addEventListener('click', function(){
       navigator.clipboard.writeText('debss@umich.edu').then(function(){
         var orig = copyBtn.textContent;
@@ -23,7 +22,7 @@
         setTimeout(function(){ copyBtn.textContent = orig; }, 1600);
       });
     });
-  }
+  });
 
   // case-study scroll-spy sidebar
   var spyLinks = document.querySelectorAll('.cs-spy a');

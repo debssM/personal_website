@@ -111,11 +111,12 @@ section{padding:56px 0;scroll-margin-top:84px;}
 .hero-actions{
   display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin:18px 0 0;
 }
-.hero-actions a{
+.hero-actions a,.hero-actions button{
   font-family:"Hanken Grotesk",sans-serif;font-size:15px;font-weight:600;
   color:var(--brown);text-decoration:none;text-underline-offset:4px;transition:color .2s ease;
+  background:none;border:none;padding:0;cursor:pointer;
 }
-.hero-actions a:hover{color:var(--accent);text-decoration:underline;}
+.hero-actions a:hover,.hero-actions button:hover{color:var(--accent);text-decoration:underline;}
 
 .hook-stats{
   display:flex;justify-content:center;gap:44px;flex-wrap:wrap;

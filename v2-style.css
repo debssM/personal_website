@@ -157,8 +157,6 @@ a.tile-cover:hover svg{transform:scale(1.05);}
   text-underline-offset:4px;transition:color .2s ease;
 }
 .tile-links a:hover{color:var(--accent);text-decoration:underline;}
-.tile-links a.demo-badge{color:var(--paper);}
-.tile-links a.demo-badge:hover{color:var(--paper);}
 
 /* ---------- life slideshow (home) ---------- */
 .life-strip{position:relative;}
@@ -235,13 +233,13 @@ a.tile-cover:hover svg{transform:scale(1.05);}
   100%{box-shadow:0 0 0 0 rgba(124,252,154,0);}
 }
 
-.proj-links a.demo-badge{
+a.demo-badge{
   display:inline-flex;align-items:center;gap:7px;
   color:var(--paper);background:var(--accent);
   padding:6px 16px;border-radius:999px;font-weight:700;
 }
-.proj-links a.demo-badge:hover{background:var(--ink);color:var(--paper);text-decoration:none;}
-.proj-links a.demo-badge .live-dot{width:7px;height:7px;border-radius:50%;background:#7CFC9A;flex:none;animation:demoPulse 1.8s infinite;}
+a.demo-badge:hover{background:var(--ink);color:var(--paper);text-decoration:none;}
+a.demo-badge .live-dot{width:7px;height:7px;border-radius:50%;background:#7CFC9A;flex:none;animation:demoPulse 1.8s infinite;}
 
 /* ---------- research ---------- */
 .pubs{display:flex;flex-direction:column;}

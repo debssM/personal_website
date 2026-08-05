@@ -24,6 +24,19 @@
     });
   });
 
+  // life strip manual scroll (home)
+  var lifeTrack = document.getElementById('lifeStripTrack');
+  if(lifeTrack){
+    var lifePrev = document.getElementById('lifePrev');
+    var lifeNext = document.getElementById('lifeNext');
+    var lifeStep = function(){
+      var card = lifeTrack.querySelector('.life-strip-card');
+      return card ? card.getBoundingClientRect().width + 20 : 300;
+    };
+    if(lifePrev) lifePrev.addEventListener('click', function(){ lifeTrack.scrollBy({left:-lifeStep(), behavior:'smooth'}); });
+    if(lifeNext) lifeNext.addEventListener('click', function(){ lifeTrack.scrollBy({left:lifeStep(), behavior:'smooth'}); });
+  }
+
   // case-study scroll-spy sidebar
   var spyLinks = document.querySelectorAll('.cs-spy a');
   if(spyLinks.length){
